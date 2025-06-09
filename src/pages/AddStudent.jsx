@@ -13,7 +13,7 @@ const AddStudent = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:8080/students/${id}`, {
+        .get(`https://tokenauth-latest.onrender.com/students/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -32,9 +32,9 @@ const AddStudent = () => {
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
       if (id) {
-        await axios.put(`http://localhost:8080/students/${id}`, studentData, config);
+        await axios.put(`https://tokenauth-latest.onrender.com/students/${id}`, studentData, config);
       } else {
-        await axios.post("http://localhost:8080/students/add", studentData, config);
+        await axios.post("https://tokenauth-latest.onrender.com/add", studentData, config);
       }
       navigate("/students");
     } catch (error) {

@@ -10,7 +10,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/auth/register", {
+      await axios.post("https://tokenauth-latest.onrender.com/auth/register", {
         username,
         password,
         role: "USER", // Default role assigned

@@ -13,7 +13,7 @@ const Students = () => {
     // This effect will run whenever the token changes.
     if (token) {
       axios
-        .get("http://localhost:8080/students", {
+        .get("https://tokenauth-latest.onrender.com/students", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => setStudents(response.data))
@@ -27,7 +27,7 @@ const Students = () => {
     try {
       // Call the backend API to blacklist the token
       const response = await axios.post(
-        "http://localhost:8080/auth/logout", // Assuming your backend logout endpoint
+        "https://tokenauth-latest.onrender.com/auth/logout", // Assuming your backend logout endpoint
         {},
         {
           headers: {

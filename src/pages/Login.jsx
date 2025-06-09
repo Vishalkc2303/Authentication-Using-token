@@ -23,7 +23,7 @@ const Login = ({ setToken }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/auth/login", {
+      const response = await axios.post("https://tokenauth-latest.onrender.com/auth/login", {
         username,
         password,
       });
